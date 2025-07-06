@@ -2,3 +2,11 @@
 *{
     margin: 0;
 }
+
+:root {
+  --primary-color: #15e7c7;
+}
+
+.maplibregl-compact-show{
+  opacity: 0;
+}

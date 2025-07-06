@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { EarthGlobeComponent } from "./components/earth-globe/earth-globe.component";
+import { HomeComponent } from "./components/home/home.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, EarthGlobeComponent],
+  imports: [RouterOutlet, HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

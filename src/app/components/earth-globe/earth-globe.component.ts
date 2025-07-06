@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import {MapComponent,GlobeControlDirective,ControlComponent} from '@maplibre/ngx-maplibre-gl';
-import { StyleSpecification } from 'maplibre-gl';
+import { ControlComponent, MapComponent } from '@maplibre/ngx-maplibre-gl';
+import type { StyleSpecification, Map } from 'maplibre-gl';
 
 @Component({
   selector: 'app-earth-globe',
   standalone: true,
-  imports: [MapComponent, ControlComponent, GlobeControlDirective],
+  imports: [MapComponent, ControlComponent],
   templateUrl: './earth-globe.component.html',
-  styleUrl: './earth-globe.component.scss'
+  styleUrls: ['./earth-globe.component.scss']
 })
 export class EarthGlobeComponent {
 
-customStyle: StyleSpecification = {
+  // Configuration du style pour le globe
+  customStyle: StyleSpecification = {
     version: 8,
     projection: { type: 'globe' },
     sources: {
@@ -27,12 +28,9 @@ customStyle: StyleSpecification = {
         source: 'satellite'
       }
     ],
-    // top-level sky et light sont autorisés par la spec
     sky: {
       'atmosphere-blend': [
-        'interpolate',
-        ['linear'],
-        ['zoom'],
+        'interpolate', ['linear'], ['zoom'],
         0, 1,
         5, 1,
         7, 0
@@ -43,4 +41,21 @@ customStyle: StyleSpecification = {
       position: [1.5, 90, 80]
     }
   };
+
+  // Variables pour gérer l'effet de parallaxe
+  initialZoom = 2;
+  bgScale = 1;
+  zoomFactor = 0.05;
+
+
+  onMapLoad(map: Map) {
+
+    this.initialZoom = map.getZoom();
+
+    // À chaque zoom, on ajuste la mise à l'échelle du fond
+    map.on('zoom', () => {
+      const currentZoom = map.getZoom();
+      this.bgScale = 1 + (currentZoom - this.initialZoom) * this.zoomFactor;
+    });
+  }
 }

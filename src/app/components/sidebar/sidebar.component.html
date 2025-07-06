@@ -1,0 +1,33 @@
+<div class="sidebar" [class.open]="isOpen">
+
+    <div class="sidebar-logo" (click)="switchOpen()">
+        <img src="/logo.png" alt="" class="logo">
+        @if (!isOpen){<p class="arrow">▼</p>} 
+    </div>
+
+<div class="sidebar-content" [class.visible]="isOpen">
+
+    <div class="sidebar-header">
+        <h2>Où allons-nous ?</h2>
+    </div>
+
+    <input type="text" class="sidebar-search" placeholder="Recherche de lieu..." />
+
+    <label class="sidebar-filter">
+        <input type="checkbox" [checked]="onlyMonuments" />
+        Montrer uniquement les monuments
+    </label>
+
+    <button class="sidebar-btn" (click)="onRandom()">
+        Trio aléatoire
+    </button>
+
+    <div class="sidebar-footer">
+        <p>&copy; 2025 GaiaGo</p>
+        <a href="">Mentions légales</a>
+        <a href="">Contact</a>
+        <a href="https://github.com/GuillaumeLoriot/GaiaGo" target="_blank" rel="noopener noreferrer">Git Hub</a>
+    </div>
+  </div>
+ 
+</div>

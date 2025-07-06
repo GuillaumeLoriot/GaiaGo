@@ -1,9 +1,15 @@
-<mgl-map class="map-container"
-      [style]="customStyle"
-      [zoom]="[2]"
-      [center]="[0, 0]"
-      [canvasContextAttributes]="{preserveDrawingBuffer: true}"
-      [projection]="{type: 'globe'}"
-    >
-       <mgl-control class="map-switch" mglGlobe position="top-right"></mgl-control>
-    </mgl-map>
+
+  <div class="bg" [style.transform]="'scale(' + bgScale + ')'">
+  </div>
+
+  <mgl-map
+    class="map"
+    [zoom]="[2.4]"
+    [center]="[0, 0]"
+    [canvasContextAttributes]="{ preserveDrawingBuffer: true }"
+    [projection]="{ type: 'globe' }"
+    [style]="customStyle"
+    (mapLoad)="onMapLoad($event)"
+  >
+    <mgl-control class="map-switch" mglGlobe position="top-right"></mgl-control>
+  </mgl-map>
