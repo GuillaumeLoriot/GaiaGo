@@ -9,7 +9,14 @@
     [canvasContextAttributes]="{ preserveDrawingBuffer: true }"
     [projection]="{ type: 'globe' }"
     [style]="customStyle"
-    (mapLoad)="onMapLoad($event)"
+    (mapLoad)="onMapLoad($event)">
+  <mgl-marker
+    [lngLat]="[2.3522, 48.8566]"
+    [anchor]="'bottom'"          
+    [offset]="[0, -16]"           
+    [draggable]="false"           
   >
+    <img src="marker.png" style="width:32px;height:32px;" />
+  </mgl-marker>
     <mgl-control class="map-switch" mglGlobe position="top-right"></mgl-control>
   </mgl-map>

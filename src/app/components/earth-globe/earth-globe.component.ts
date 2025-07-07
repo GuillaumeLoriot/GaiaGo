@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { ControlComponent, MapComponent } from '@maplibre/ngx-maplibre-gl';
+import { ControlComponent, MapComponent, MarkerComponent } from '@maplibre/ngx-maplibre-gl';
 import type { StyleSpecification, Map } from 'maplibre-gl';
 
 @Component({
   selector: 'app-earth-globe',
   standalone: true,
-  imports: [MapComponent, ControlComponent],
+  imports: [MapComponent, ControlComponent, MarkerComponent],
   templateUrl: './earth-globe.component.html',
   styleUrls: ['./earth-globe.component.scss']
 })
