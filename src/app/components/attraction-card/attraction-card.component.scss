@@ -11,17 +11,19 @@
   position: relative;
   justify-self: flex-end;
   width: 15%;
-  max-height: 80vh;
+  max-height: 90vh;
   background-color: rgba(10, 14, 20, 0.6);
   font-family: 'Orbitron', sans-serif;
   color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 30px var(--primary-color);
   padding: 20px;
-  margin: 50px;
+  margin: 5px;
   overflow: hidden;
-  transition: width 0.5s ease, max-height 0.5s ease;
+  opacity: 1;
+  transition: width 0.5s ease, height 0.5s ease, opacity 1s ease;
   z-index: 2;
+
 
   /* segments de bordure partiels */
   background-image:
@@ -36,6 +38,18 @@
   /* custom scrollbar */
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) rgba(10,14,20,0.95);
+}
+
+.popup.open {
+  width: 75vw;
+  max-width: 75vw;
+  max-height: 91vh;
+  overflow-y: auto;
+
+}
+
+.dont-exist{
+  opacity: 0;
 }
 
 .popup::-webkit-scrollbar {
@@ -54,13 +68,6 @@
   background-color: rgba(0,240,255,0.8);
 }
 
-.popup.open {
-  width: 60vw;
-  max-width: 60vw;
-  max-height: 70vh;
-  overflow-y: auto;
-
-}
 
 .popup::before {
   content: '';
@@ -95,22 +102,34 @@
 
 .popup-image {
   width: 100%;
+  max-height: 90vh;
   border-radius: 6px;
   border: 1px solid var(--primary-color);
   box-shadow: 0 0 15px var(--primary-color);
   margin-bottom: 15px;
   object-fit: cover;
   transition: max-height 0.5s ease;
+  opacity: 0.9;
 }
 
 .popup-content {
   font-size: 1rem;
   line-height: 1.6;
 }
+.bold{
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  font-weight: bold;
+  text-shadow: 0 0 8px var(--primary-color);
+}
+.country{
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
 
 .btn {
   display: inline-block;
-  margin-top: 20px;
+  margin: 20px 0;
   padding: 12px 24px;
   border: 1px solid var(--primary-color);
   border-radius: 4px;
@@ -136,5 +155,6 @@
 }
 
 .popup.open .more-info {
-  max-height: 500px;
+  max-height: 1000px;
 }
+

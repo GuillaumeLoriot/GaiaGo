@@ -1,23 +1,21 @@
 
-    <div class="popup" [class.open]="isOpen">
+
+    <section class="popup" [class.open]="isOpen" [class.dont-exist]="dontExist">
         <div class="popup-header">
-            <h2>Tour Eiffel</h2>
-            <button class="close-btn" (click)="close()">×</button>
+            <h2>{{attraction?.title}}</h2>
+            <button class="close-btn" (click)="close()">x</button>
         </div>
         <div class="popup-content">
-            <img src="/eiffel-tower.jpg" alt="Tour Eiffel" class="popup-image">
-            <p>Localisation : Paris - France</p>
+            <img [src]="attraction?.image" [alt]="attraction?.title" class="popup-image">
+            <p class="bold">Localisation :</p>
+            <p>{{attraction?.city}} - <span class="country">{{attraction?.country}}</span></p>
             <button type="button" class="btn" (click)="toggle()">
                 {{ isOpen ? 'Réduire' : 'Plus d\'infos' }}
             </button>
         </div>
         <div class="more-info">
-            <h3>Plus d'infos</h3>
-            <p>
-                La Tour Eiffel, chef-d'œuvre de Gustave Eiffel érigé pour l'Exposition universelle
-                de 1889, s'élève à 324 m au cœur du Champ-de-Mars à Paris ; ses trois niveaux accessibles
-                (jusqu'à 276 m au sommet) offrent une vue imprenable sur la capitale, tandis que son
-                éclairage scintillant chaque soir en fait un spectacle incontournable.
-            </p>
+            <h3 class="bold">Plus d'infos</h3>
+            <p>{{attraction?.description}}</p>
         </div>
-    </div>
+    </section>
+

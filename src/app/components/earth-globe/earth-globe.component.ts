@@ -1,15 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, input, Output, SimpleChanges } from '@angular/core';
 import { ControlComponent, MapComponent, MarkerComponent } from '@maplibre/ngx-maplibre-gl';
 import type { StyleSpecification, Map } from 'maplibre-gl';
+import Attraction from '../../models/attraction.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-earth-globe',
   standalone: true,
-  imports: [MapComponent, ControlComponent, MarkerComponent],
+  imports: [MapComponent, ControlComponent, MarkerComponent, CommonModule],
   templateUrl: './earth-globe.component.html',
   styleUrls: ['./earth-globe.component.scss']
 })
 export class EarthGlobeComponent {
+
+
+ 
+  @Input() attractions: Attraction[] = [];
+  @Output() selectedPlace = new EventEmitter<Attraction>();
+
 
   // Configuration du style pour le globe
   customStyle: StyleSpecification = {
@@ -48,6 +56,14 @@ export class EarthGlobeComponent {
   zoomFactor = 0.05;
 
 
+  // ngOnChanges(changes: SimpleChanges) {
+  //   if (changes['attractions']) {
+  //     console.log('attractions reçues dans l’enfant :', this.attractions);
+  //   }
+  // }
+
+
+
   onMapLoad(map: Map) {
 
     this.initialZoom = map.getZoom();
@@ -58,4 +74,13 @@ export class EarthGlobeComponent {
       this.bgScale = 1 + (currentZoom - this.initialZoom) * this.zoomFactor;
     });
   }
+
+selectAttraction(id: number): void{
+  console.log('test')
+    const selected = this.attractions.find(attraction => attraction.id === id);
+  console.log('Attraction sélectionnée pour id', id, ':', selected);
+  this.selectedPlace.emit(selected);
+
+}
+
 }

@@ -1,5 +1,9 @@
 <div class="wrapper">
-    <app-sidebar></app-sidebar>
-    <app-attraction-card></app-attraction-card>
-    <app-earth-globe></app-earth-globe>
+    <app-sidebar 
+         (randomPlace)="transmitRandomPlace($event)" 
+         (filterMonuments)="filterMonnuments($event)"
+         (search)="searchCity($event)">
+    </app-sidebar>
+    <app-attraction-card [attraction]="randomAttraction" [attraction]="selectedAttraction"></app-attraction-card>
+    <app-earth-globe [attractions]="attractions" (selectedPlace)="transmitSelectedPlace($event)"></app-earth-globe>
 </div>

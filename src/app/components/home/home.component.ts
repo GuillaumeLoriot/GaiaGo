@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, input, OnInit } from '@angular/core';
 import { EarthGlobeComponent } from "../earth-globe/earth-globe.component";
 import { AttractionCardComponent } from "../attraction-card/attraction-card.component";
 import { SidebarComponent } from "../sidebar/sidebar.component";
@@ -14,8 +14,14 @@ import { AttractionService } from '../../services/attraction.service';
 })
 export class HomeComponent implements OnInit {
 
+
+
   private attractionService = inject(AttractionService);
+  allAttractions: Attraction[] = [];
   attractions: Attraction[] = [];
+  randomAttraction: Attraction | null = null;
+  selectedAttraction: Attraction | null = null;
+  monuments: Attraction[] = [];
 
   ngOnInit() {
     this.loadAttractions();
@@ -26,7 +32,8 @@ export class HomeComponent implements OnInit {
       next: (data) => {
 
         this.attractions = data;
-        console.log(this.attractions);
+        this.allAttractions = data;
+
       },
 
       error: () => {
@@ -37,4 +44,35 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  searchCity(city: string) {
+   this.attractions = this.allAttractions.filter((attraction)=>{
+        return attraction.city.toLowerCase().trim().includes(city.toLowerCase().trim());
+      });
+      console.log(this.attractions)
+  }
+
+  transmitRandomPlace(randomPlace: Attraction) {
+    this.randomAttraction = randomPlace;
+  }
+
+  transmitSelectedPlace(selectedPlace: Attraction) {
+    this.selectedAttraction = selectedPlace;
+  }
+
+  filterMonnuments(onlyMonuments: boolean) {
+    if (onlyMonuments) {
+      this.attractions = this.allAttractions.filter((attraction) => {
+        return attraction.isMonument === true;
+      });
+    } else {
+      this.attractions = this.allAttractions;
+    }
+  }
+
 }
+
+
+
+
+
+

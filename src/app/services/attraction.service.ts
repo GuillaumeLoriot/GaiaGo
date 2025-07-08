@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import attraction from '../models/attraction.interface';
+import Attraction from '../models/attraction.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ Depuis les remparts, les visiteurs admirent une vue imprenable sur le lac et les
 
 Un petit musée hébergé à l'intérieur expose des artefacts archéologiques, permettant de comprendre l'évolution du site du Moyen Âge à nos jours.
 `,
-    image: "",
+    image: "/images/rozafa-castle.jpg",
     isMonument: true,
   },
   {
@@ -47,7 +48,7 @@ Les jardins à la française, dessinés au XVIIIᵉ siècle, s'étendent sur 160
 
 Le zoo de Schönbrunn, le plus ancien d'Europe, se trouve à proximité, complétant l'expérience culturelle et naturelle du site.
 `,
-    image: "",
+    image: "/images/palais-schonbrunn.jpg",
     isMonument: true,
   },
   {
@@ -65,7 +66,7 @@ Le beffroi de l'hôtel de ville et la maison du Roi sont parmi les monuments les
 
 Le soir, l'éclairage met en valeur les dorures et sculptures, offrant un spectacle féérique aux visiteurs.
 `,
-    image: "",
+    image: "/images/grand-place.jpg",
     isMonument: true,
   },
   {
@@ -83,7 +84,7 @@ La crypte abrite la galerie nationale d'icônes, présentant des œuvres de gran
 
 Située au cœur de Sofia, la cathédrale domine la place éponyme et constitue un point de repère incontournable pour découvrir la capitale.
 `,
-    image: "",
+    image: "/images/cathedrale-alexandre-nevsky.jpg",
     isMonument: true,
   },
   {
@@ -101,7 +102,7 @@ Malgré sa petite taille (environ 1,25 m), elle est devenue un symbole interna
 
 Le site offre également de belles promenades le long du port, ponctuées de bateaux colorés et de cafés en plein air.
 `,
-    image: "",
+    image: "/images/petite-sirene.jpg",
     isMonument: true,
   },
   {
@@ -119,7 +120,7 @@ L'intérieur sobre et lumineux est orné de colonnes et d'un orgue majestueux, o
 
 Des concerts de musique classique y sont régulièrement organisés, profitant de l'acoustique remarquable de la nef.
 `,
-    image: "",
+    image: "/images/cathedrale-helsinki.jpg",
     isMonument: true,
   },
   {
@@ -137,7 +138,7 @@ Symbole de la réunification allemande, elle fut le lieu de manifestations histo
 
 Aujourd'hui, elle constitue le point culminant de l'avenue Unter den Linden et un lieu de rassemblement pour événements nationaux et internationaux.
 `,
-    image: "",
+    image: "/images/porte-brandebourg.jpg",
     isMonument: true,
   },
   {
@@ -155,7 +156,7 @@ Les promenades dans les jardins royaux offrent des vues pittoresques sur Pest et
 
 La colline du château est un site classé UNESCO, propice aux explorations à pied ou en funiculaire.
 `,
-    image: "",
+    image: "/images/château-buda.jpg",
     isMonument: true,
   },
   {
@@ -173,7 +174,7 @@ La passerelle aménagée permet d'admirer des panoramas changeant selon la lumi�
 
 Au sommet, le centre d'accueil présente une exposition interactive sur la géologie, la faune et les légendes liées aux falaises.
 `,
-    image: "",
+    image: "/images/falaises-moher.jpg",
     isMonument: false,
   },
   {
@@ -191,7 +192,7 @@ Le quartier abrite également de nombreux cafés, galeries d'art et boutiques d'
 
 Les visites guidées racontent l'histoire hanséatique de Riga et sa renaissance après l'indépendance.
 `,
-    image: "",
+    image: "/images/vieille-riga.jpg",
     isMonument: true,
   },
   {
@@ -209,7 +210,7 @@ Du bastion de l'entrée principale, la vue s'étend sur la plaine centrale de Ma
 
 Le palais Vilhena, transformé en musée, expose des collections d'art, d'armes et d'archives retraçant l'histoire de l'île.
 `,
-    image: "",
+    image: "/images/vieille-mdina.jpg",
     isMonument: true,
   },
   {
@@ -227,7 +228,7 @@ Les colonnes corinthiennes et la cella centrale ont été restaurées après le 
 
 Le site comprend également une ancienne résidence royale et des bains thermaux datant de l'époque romaine.
 `,
-    image: "",
+    image: "/images/temple-garni.jpg",
     isMonument: true,
   },
   {
@@ -245,7 +246,7 @@ La légende locale évoque la mort tragique de Bibi Pari, fille du gouverneur, d
 
 Les murs en briques rouges et les terrasses surélevées témoignent de l'architecture militaire et civile moghole.
 `,
-    image: "",
+    image: "/images/fort-lalbagh.jpg",
     isMonument: true,
   },
   {
@@ -263,7 +264,7 @@ L'intérieur est orné de marbre italien, de mosaïques importées et d'un mihra
 
 Le site est un lieu de culte actif et un symbole du sultanat, accueillant prières quotidiennes et festivals religieux.
 `,
-    image: "",
+    image: "/images/mosquée-omar-ali-saifuddien.jpg",
     isMonument: true,
   },
     {
@@ -280,7 +281,7 @@ Conçue pour défendre la capitale contre les incursions mongoles, elle s'étend
 Les travaux de restauration ont été menés au XXᵉ siècle pour préserver son architecture d'origine : créneaux, chemin de ronde et escaliers taillés dans la roche.
 
 Aujourd'hui, Badaling accueille jusqu'à 10 000 visiteurs par jour, offrant des sentiers balisés et de superbes panoramas sur les collines boisées environnantes.`,
-    image: "",
+    image: "/images/grande-muraille.jpg",
     isMonument: true,
   },
   {
@@ -297,7 +298,7 @@ Le mausolée repose sur une plateforme octogonale, entourée de quatre minarets 
 La décoration intègre plus de trente variétés de pierres semi-précieuses (lapis-lazuli, jaspe, agate) incrustées selon la technique du « pietra dura », formant des motifs floraux et calligraphiques.
 
 Au lever et au coucher du soleil, la luminosité changeante fait varier la couleur du marbre, créant un spectacle quotidien et attirant des millions de visiteurs chaque année.`,
-    image: "",
+    image: "/images/taj-mahal.jpg",
     isMonument: true,
   },
   {
@@ -314,7 +315,7 @@ La terrasse d'apparat est ornée de bas-reliefs représentant les délégations 
 Les palais à colonnes monumentales et le grand escalier montrent l'influence architecturale grecque et mésopotamienne.
 
 Après son sac lors de la conquête d'Alexandre le Grand en 330 av. J.-C., les ruines colossalement dispersées témoignent encore de la richesse et de l'organisation de l'empire.`,
-    image: "",
+    image: "/images/persepolis.jpg",
     isMonument: true,
   },
   {
@@ -331,7 +332,7 @@ Composée de blocs de pierre massive pesant parfois plusieurs tonnes, sa partie 
 Chaque jour, les fidèles glissent des notes de prières dans les interstices, espérant l'intercession divine.
 
 Pendant le shabbat et les fêtes juives, le site vibre des chants et offices, attirant pèlerins et touristes du monde entier.`,
-    image: "",
+    image: "/images/mur-lamentations.jpg",
     isMonument: true,
   },
   {
@@ -348,7 +349,7 @@ Datant du Ier siècle av. J.-C., son nom (« Trésor ») vient de la légende d'
 Son style mêle éléments hellénistiques (colonnes corinthiennes) et motifs moyen-orientaux.
 
 Après l'exploration de l'archéologue Johann Ludwig Burckhardt en 1812, le site est aujourd'hui classé UNESCO et parcouru par un long Siq (gorge étroite).`,
-    image: "",
+    image: "/images/al-khazneh.jpg",
     isMonument: true,
   },
   {
@@ -365,7 +366,7 @@ La principale, haute de 187 m, abrite un restaurant tournant et un observatoire 
 La deuxième tour sert de réservoir d'eau, tandis que la troisième est consacrée aux éclairages et au générateur de secours.
 
 Le design, mêlant boules métalliques et fûts élancés, s'inspire de l'architecture islamique contemporaine.`,
-    image: "",
+    image: "/images/tours-koweït.jpg",
     isMonument: true,
   },
   {
@@ -382,7 +383,7 @@ Sa toiture en baldaquin basse et ses murs latéraux ornés de mosaïques en verr
 Le toit est composé de cinq niveaux superposés, typiques du style lan, créant une silhouette reconnaissable de loin.
 
 À l'intérieur, l'oratoire principal abrite une statue sacrée et un pan de mosaïque illustrant le désir de vie éternelle.`,
-    image: "",
+    image: "/images/wat-xieng-thong.jpg",
     isMonument: true,
   },
     {
@@ -400,7 +401,7 @@ Du haut de ses remparts, on domine la baie d'Alger et le port, offrant un panora
 
 Des palais, mosquées et hammams témoignent de l'importance historique et architecturale de la Casbah, restaurée grâce à des projets de sauvegarde internationale.`,
 
-    image: "",
+    image: "/images/casbah-alger.jpg",
     isMonument: true,
   },
   {
@@ -418,7 +419,7 @@ Le site, classé UNESCO, abrite aujourd'hui un musée qui expose costumes royaux
 
 Les toits de chaume et les enceintes imposantes évoquent le pouvoir des anciens souverains et la complexité de leur administration.`,
 
-    image: "",
+    image: "/images/palais-royaux-abomey.jpg",
     isMonument: true,
   },
   {
@@ -436,7 +437,7 @@ Classées UNESCO en 2009, ces ruines offrent un témoignage rare de l'organisati
 
 Leur état de conservation permet d'imaginer les diasporas commerciales qui contrôlaient le commerce de l'or et du sel dans la région.`,
 
-    image: "",
+    image: "/images/ruines-loropéni.jpg",
     isMonument: false,
   },
   {
@@ -454,7 +455,7 @@ Les peuples locaux Bakweri lui attribuent des légendes spirituelles où le volc
 
 Chaque année, des milliers de randonneurs relèvent le défi de conquérir son sommet pour admirer un panorama s'étendant jusqu'à l'océan Atlantique par temps clair.`,
 
-    image: "",
+    image: "/images/mont-cameroun.jpg",
     isMonument: false,
   },
   {
@@ -472,7 +473,7 @@ Les programmes de suivi écologique et de tourisme communautaire impliquent les 
 
 Des balades en pirogue et des pistes d'observation offrent des rencontres inoubliables avec la faune, soulignant l'importance de la conservation.`,
 
-    image: "",
+    image: "/images/réserve-dzanga-sangha.jpg",
     isMonument: false,
   },
   {
@@ -490,7 +491,7 @@ L'ascension, technique et exigeante, conduit à un caldeira de plus de 3 km de d
 
 Les panoramas depuis le bord du cratère dominent l'océan Indien, tandis que la flore endémique prospère sur les pentes fertiles.`,
 
-    image: "",
+    image: "/images/mont-karthala.jpg",
     isMonument: false,
   },
   {
@@ -508,7 +509,7 @@ Son dôme culminant à 158 mètres est visible à des kilomètres à la ronde, s
 
 Le complexe comprend des jardins, une place d'honneur et des mosaïques byzantines, témoignant d'une architecture monumentale audacieuse.`,
 
-    image: "",
+    image: "/images/basilique-notre-dame-de-la-paix.png",
     isMonument: true,
   },
   {
@@ -525,7 +526,7 @@ Sa structure en calcaire fin et granit rose est parfaitement alignée sur les po
 À l'intérieur, un réseau de couloirs et de chambres—dont la chambre funéraire du roi—illustre le savoir-faire des ouvriers égyptiens et leurs techniques de transport de blocs gigantesques.
     
 Malgré l'érosion et les pillages, elle conserve encore aujourd'hui son volume colossal (2,5 millions de blocs pour 146 m de hauteur initiale).`,
-    image: "",
+    image: "/images/grande pyramide-gizeh.jpg",
     isMonument: true,
   },
   {
@@ -542,7 +543,7 @@ Elle abrite antilopes, zèbres, buffles, et une riche avifaune, que l'on peut ob
 Le lodge principal, construit dans un style traditionnel, offre hébergement et initiation à la culture swazi grâce à des danses et des ateliers artisanaux.
     
 La réserve met l'accent sur le tourisme communautaire durable, en reversant une partie des revenus aux villages environnants.`,
-    image: "",
+    image: "/images/réserve-mlilwane.jpg",
     isMonument: false,
   },
   {
@@ -559,7 +560,7 @@ On y trouve hippopotames, buffles, gorilles et chimpanzés, mais aussi flamants 
 Les safaris 4×4, en bateau ou à pied permettent d'approcher la faune dans son milieu naturel, encadrés par des guides locaux.
     
 Classé réserve de biosphère par l'UNESCO, Loango est un modèle de conservation intégrée associant recherche, éducation et développement durable.`,
-    image: "",
+    image: "/images/parc-national-loango.jpg",
     isMonument: false,
   },
   {
@@ -576,7 +577,7 @@ La saison sèche (juillet-octobre) voit plus de deux millions d'animaux traverse
 Le parc couvre 1 510 km² de savanes, collines et forêts d'acacias, et accueille lions, léopards, guépards et éléphants.
     
 Les guides maasaï, gardiens du territoire depuis des siècles, offrent une expertise unique sur les traditions, la faune et la flore locales.`,
-    image: "",
+    image: "/images/reserve-maasai-mara.avif",
     isMonument: false,
   },
   {
@@ -593,7 +594,7 @@ Classé UNESCO, le parc national protégé abrite une biodiversité luxuriante :
 Les passerelles et trains écologiques permettent d'accéder aux différents points de vue, dont la passerelle suspendue au-dessus de la gueule de la gorge.
 
 L'effet de brume et l'arc-en-ciel presque permanent créent une ambiance mystique, renforcée par le grondement continu des chutes.`,
-    image: "",
+    image: "/images/chutes-iguazu.jpg",
     isMonument: false,
   },
   {
@@ -610,7 +611,7 @@ Un réseau de cavernes souterraines, accessible en tramway ou à pied, se termin
 Des légendes locales racontent que des pirates y cachaient leur butin, ajoutant un charme mystique à la visite.
 
 Le site est équipé d'éclairages doux et interactifs pour sensibiliser à la géologie et à la préservation du milieu souterrain.`,
-    image: "",
+    image: "/images/grottes-harrison.jpg",
     isMonument: false,
   },
   {
@@ -627,7 +628,7 @@ Pendant la saison des pluies, une fine pellicule d'eau transforme la surface en 
 On y trouve l'île Incahuasi, couverte de cactus géants et offrant un panorama exceptionnel sur le désert blanc.
 
 Le salar est également une importante réserve de lithium, dont l'exploitation pose des enjeux environnementaux et économiques majeurs.`,
-    image: "",
+    image: "/images/salar-uyuni.jpg",
     isMonument: false,
   },
   {
@@ -644,7 +645,7 @@ Le débit moyen de 2 400 m³/s en fait l'une des plus puissantes chutes d'eau du
 Au pied des falaises, la brume crée des arcs-en-ciel permanents, tandis que des excursions en bateau (Maid of the Mist) plongent les visiteurs dans la puissance du courant.
 
 Le site est aussi un centre historique : l'aménagement hydroélectrique de Sir Adam Beck a façonné le développement industriel de la région dès 1922.`,
-    image: "",
+    image: "/images/chutes-niagara.jpg",
     isMonument: false,
   },
   {
@@ -661,7 +662,7 @@ Le centre historique, classé UNESCO, dévoile des rues colorées, des balcons f
 La forteresse de San Felipe de Barajas, construite au XVIIᵉ siècle, couronne la ville et offre des vues stratégiques sur la baie.
 
 La ville vibre aujourd'hui entre traditions caraïbes et influence afro-colombienne, avec musique live et gastronomie locale dans les ruelles piétonnes.`,
-    image: "",
+    image: "/images/centre-carthagene.webp",
     isMonument: true,
   },
   {
@@ -678,7 +679,7 @@ Le Malecón, digue emblématique, longe le front de mer et se transforme en agor
 Les voitures rétro des années 1950, omniprésentes, contribuent au charme suranné de la ville, tandis que les cours intérieures abritent des ateliers d'artistes.
 
 Inscrite UNESCO, la Vieille Havane est un creuset culturel où danses, musique et artisanat conjuguent passé et présent.`,
-    image: "",
+    image: "/images/vieille-havane.jpeg",
     isMonument: true,
   },
   {
@@ -695,7 +696,7 @@ Protégées par une barrière de corail, elles offrent des conditions idéales p
 Les écosystèmes environnants, mangroves et cocoteraies, abritent une faune variée : iguanes, oiseaux tropicaux et tortues marines.
 
 La région a développé un tourisme responsable avec réserves naturelles (parc écologique Indigenous Eyes) et initiatives de protection du littoral.`,
-    image: "",
+    image: "/images/punta-cana.jpg",
     isMonument: false,
   },
   {
@@ -712,7 +713,7 @@ Son cratère actif renferme un lac acide vert émeraude, alimenté par des sourc
 La randonnée (environ 4 h aller-retour) traverse forêts de pins, plantations de café et offre des vues panoramiques sur le lac Coatepeque.
 
 Lors de l'éruption de 2005, des coulées pyroclastiques sculptèrent les flancs, mais le volcan reste surveillé en permanence par les autorités géologiques.`,
-    image: "",
+    image: "/images/volcan-santa-ana.jpg",
     isMonument: false,
   },
   {
@@ -729,7 +730,7 @@ Les pyramides imposantes, dont le Temple I « du Grand Jaguar » (47 m), dominen
 Des agoras, palais et places cérémonielles témoignent d'une organisation urbaine sophistiquée et d'un calendrier astronomique précis.
 
 Inscrit UNESCO, le parc national de Tikal est aussi une réserve pour jaguars, singes hurleurs et toucans, protégé dans le cœur de la biosphère Maya.`,
-    image: "",
+    image: "/images/tikal.jpg",
     isMonument: true,
   },
   {
@@ -746,7 +747,7 @@ Perchée à 900 m d'altitude, elle contrôlait la plaine du Cap-Haïtien et abri
 Les murs en pierre locale et les embrasures pour canons témoignent de l'ingéniosité militaire haïtienne post-indépendance.
 
 Classée UNESCO, elle symbolise la résistance et la souveraineté du premier État noir libre au monde.`,
-    image: "",
+    image: "/images/citadelle-laferrière.jpg",
     isMonument: true,
   },
   {
@@ -764,7 +765,7 @@ Le complexe comprend cinq salles de spectacles de formes et tailles variées, ac
 
 Classé au patrimoine mondial de l'UNESCO en 2007, l'Opéra reste un centre culturel dynamique, entouré de cafés, promenades et jardins en bord de mer.`,
 
-    image: "",
+    image: "/images/opera-sydney.jpg",
     isMonument: true,
   },
   {
@@ -782,7 +783,7 @@ Au cœur de l'atoll, on trouve des sites historiques de la Seconde Guerre mondia
 
 Les eaux calmes regorgent de coraux multicolores et de poissons tropicaux, offrant des plongées et du snorkeling exceptionnels.`,
 
-    image: "",
+    image: "/images/atoll-tarawa.jpg",
     isMonument: false,
   },
   {
@@ -800,7 +801,7 @@ Les blocs de basalte, certains pesant jusqu'à plusieurs tonnes, ont été trans
 
 Classé au patrimoine mondial de l'UNESCO, Nan Madol reste un mystère archéologique et un haut lieu spirituel pour les Micronésiens.`,
 
-    image: "",
+    image: "/images/nan-madol.jpg",
     isMonument: true,
   },
   {
@@ -818,7 +819,7 @@ Accessible par la célèbre route panoramique de Milford, on y pratique le kayak
 
 Classé parc national et réserve de biosphère par l'UNESCO, Milford Sound est célébré par Rudyard Kipling comme la « huitième merveille du monde ».`,
 
-    image: "",
+    image: "/images/milford-sound.jpg",
     isMonument: false,
   },
   {
@@ -836,7 +837,7 @@ Des sanctuaires et tombes de soldats jalonnent le chemin, entretenus par les pop
 
 Aujourd'hui, les randonneurs du monde entier viennent honorer les anciens combattants et relever le défi physique de cette traversée légendaire.`,
 
-    image: "",
+    image: "/images/trace-kokoda.jpg",
     isMonument: false,
   },
   {
@@ -854,7 +855,7 @@ La biodiversité marine est exceptionnelle : poissons multicolores, tortues et r
 
 Classée réserve de biosphère par l'UNESCO, Marovo favorise le tourisme durable et la recherche scientifique sur les écosystèmes fragiles.`,
 
-    image: "",
+    image: "/images/lagune-marovo.jpeg",
     isMonument: false,
   },
   {
@@ -872,7 +873,7 @@ Le village de Funafuti, centre administratif, présente une église en feuilles 
 
 Menacé par l'élévation du niveau de la mer, l'atoll est une vitrine des enjeux climatiques dans les nations insulaires du Pacifique.`,
 
-    image: "",
+    image: "/images/atoll-funafuti.jpg",
     isMonument: false,
   },
     {
@@ -890,7 +891,7 @@ Le sentier de randonnée, balisé et sécurisé, permet de s'approcher du cratè
 
 La lumière changeante du jour et de la nuit transforme l'ambiance : à l'aube, la fumée dorée contraste avec le ciel, tandis qu'au crépuscule les jaillissements de lave rougeoyante éclairent le paysage.`,
 
-    image: "",
+    image: "/images/mount-yasur.jpg",
     isMonument: false,
   },
   {
@@ -908,7 +909,7 @@ La structure en poutres métalliques, peinte tous les sept ans, nécessite plus 
 
 Le soir, 20 000 ampoules scintillent pendant cinq minutes à chaque heure, transformant l'édifice en un joyau lumineux au cœur de la capitale.`,
 
-    image: "",
+    image: "/images/eiffel-tower.jpg",
     isMonument: true,
   },
   {
@@ -926,7 +927,7 @@ Le mécanisme à poids de l'horloge, restauré régulièrement, garantit une pr�
 
 Bien que fermée au grand public, la tour reste un point de repère symbolique du Parlement et figure immanquable des clichés de Londres.`,
 
-    image: "",
+    image: "/images/big-ben.jpg",
     isMonument: true,
   },
   {
@@ -944,7 +945,7 @@ La structure interne en fer forgé conçue par Gustave Eiffel soutient la peau d
 
 Un escalier de 354 marches permet d'accéder à la couronne, offrant une vue imprenable sur Manhattan, la baie et le pont de Brooklyn.`,
 
-    image: "",
+    image: "/images/statue-liberte.jpg",
     isMonument: true,
   },
   {
@@ -962,7 +963,7 @@ L'ascension durant la saison ouverte (juillet-août) se fait par quatre chemins 
 
 Au sommet, le cratère de 500 mètres de diamètre abrite un petit lac et offre un lever de soleil appelé “goraiko”, moment de recueillement pour les pèlerins.`,
 
-    image: "",
+    image: "/images/mont-fuji.jpg",
     isMonument: false,
   },
   {
@@ -980,7 +981,7 @@ Le site est accessible par un chemin de fer à crémaillère ou par un escalier 
 
 Inscrite comme nouvelle merveille du monde en 2007, elle symbolise la paix et l'unité, surplombant les plages, le pain de sucre et la forêt de Tijuca.`,
 
-    image: "",
+    image: "/images/christ-redempteur.jpg",
     isMonument: true,
   },
   {
@@ -998,13 +999,21 @@ Au-delà d'El Castillo, on découvre l'observatoire El Caracol, le terrain de je
 
 Site UNESCO et nouvelle merveille du monde, Chichén Itzá est aussi un laboratoire de recherche archéologique sur l'astronomie et la société maya.`,
 
-    image: "",
+    image: "/images/chichen-itza.jpg",
     isMonument: true,
   },
         
       ]);
       observer.complete();
-    }, 2000);
+    }, 500);
   });
 }
+
+getRandom(): Observable<attraction> {
+  return this.getAll().pipe(
+    map(attractions => attractions[Math.floor(Math.random() * attractions.length)])
+  );
+}
+
+
 }
