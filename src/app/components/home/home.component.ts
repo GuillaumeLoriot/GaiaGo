@@ -45,10 +45,14 @@ export class HomeComponent implements OnInit {
   }
 
   searchCity(city: string) {
-   this.attractions = this.allAttractions.filter((attraction)=>{
-        return attraction.city.toLowerCase().trim().includes(city.toLowerCase().trim());
-      });
-      console.log(this.attractions)
+    this.attractions = this.allAttractions.filter((attraction) => {
+      return attraction.city
+        .toLowerCase()
+        .trim()
+        .includes(city.toLowerCase()
+          .trim());
+    });
+    console.log(this.attractions)
   }
 
   transmitRandomPlace(randomPlace: Attraction) {
